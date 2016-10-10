@@ -67,5 +67,12 @@ class TestWordCounts(unittest.TestCase):
             msg='should not count multilines'
         )
 
+    def test_word_occurance9(self):
+        self.assertDictEqual(
+            {'hello': 1, 'world': 1},
+            words('hello\tworld'),
+            msg='should not count tabs'
+        )
+
 if __name__ == '__main__':
     unittest.main()

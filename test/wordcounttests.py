@@ -60,6 +60,12 @@ class TestWordCounts(unittest.TestCase):
             msg='should count international characters properly'
         )
 
+    def test_word_occurance8(self):
+        self.assertDictEqual(
+            {'hello': 1, 'world': 1},
+            words('hello\nworld'),
+            msg='should not count multilines'
+        )
 
 if __name__ == '__main__':
     unittest.main()

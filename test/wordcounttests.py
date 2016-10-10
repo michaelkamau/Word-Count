@@ -46,6 +46,13 @@ class TestWordCounts(unittest.TestCase):
             words('testing 1 2 testing'),
             msg='should include numbers')
 
+    def test_word_occurance6(self):
+        self.assertDictEqual(
+            {'go': 1, 'Go': 1, 'GO': 1},
+            words('go Go GO'),
+            msg='should respect case'
+        )
+
 
 if __name__ == '__main__':
     unittest.main()

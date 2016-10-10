@@ -1,5 +1,7 @@
 def words(str_words):
-    word_list = str_words.split(' ')
+    import re
+    pattern = re.compile(r'\s')
+    word_list = pattern.split(str_words)
     # Check for strings with ints, convert if necessary
     for i in range(len(word_list)):
         try:

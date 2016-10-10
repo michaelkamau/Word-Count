@@ -25,7 +25,26 @@ class TestWordCounts(unittest.TestCase):
         self.assertDictEqual(
             {'one': 1, 'fish': 4, 'two': 1, 'red': 1, 'blue': 1},
             words("one fish two fish red fish blue fish"),
-            msg='should count multiple occurrences'
+            msg='should count multiple occurrences')
+
+    def test_word_occurance4(self):
+        self.assertDictEqual(
+            {'car': 1,
+             ":": 2,
+             'carpet': 1,
+             'as': 1,
+             'java': 1,
+             'javascript!!&@$%^&': 1
+             },
+            words('car : carpet as java : javascript!!&@$%^&'),
+            msg='should include punctuation'
+        )
+
+    def test_word_occurance5(self):
+        self.assertDictEqual(
+            {'testing': 2, 1: 1, 2: 1},
+            words('testing 1 2 testing'),
+            msg='should include numbers')
 
 
 if __name__ == '__main__':

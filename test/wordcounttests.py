@@ -21,6 +21,12 @@ class TestWordCounts(unittest.TestCase):
             msg='should count one of each'
         )
 
+    def test_word_occurance3(self):
+        self.assertDictEqual(
+            {'one': 1, 'fish': 4, 'two': 1, 'red': 1, 'blue': 1},
+            words("one fish two fish red fish blue fish"),
+            msg='should count multiple occurrences'
+
 
 if __name__ == '__main__':
     unittest.main()

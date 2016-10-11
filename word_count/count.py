@@ -1,7 +1,16 @@
 def words(str_words):
-    import re
-    pattern = re.compile(r'\s+')
-    word_list = pattern.split(str_words)
+    # split on spaces
+    word_list = []
+    if ' ' in str_words:
+        # remove spaces if found
+        word_list = [i for i in str_words.split() if i]
+    elif '\n' in str_words:
+        word_list = str_words.split('\n')
+    elif '\t' in str_words:
+        word_list = str_words.split('\t')
+    else:
+        return {str_words : 1}
+
     # Check for strings with ints, convert if necessary
     for i in range(len(word_list)):
         try:
